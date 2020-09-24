@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
+import Header from './Header';
+import Item from './Item';
+import Cart from './Cart';
+import Footer from './Footer';
 import '../App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      cart: [],
+      cartView: false,
+      items: [],
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -10,21 +22,10 @@ class App extends Component {
         items with map function
         cart
         footer} */}
-
-        <header className="App-header">
-          <p>
-            STUFF ABOUT LUCY
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            WHAT
-  
-          </a>
-        </header>
+        <Header />
+        <Item />
+        <Cart />
+        <Footer />
       </div>
     );
   }
