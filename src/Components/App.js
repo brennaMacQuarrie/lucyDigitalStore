@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import firebase from "./firebase";
 import Header from './Header';
 import Item from './Item';
 import Cart from './Cart';
@@ -14,6 +15,16 @@ class App extends Component {
       items: [],
     }
   }
+
+    // this should be a function to change the state of the cartView, toggling between visible and non visible
+  cartView = (visible) => {
+    const newState = visible;
+    this.setState({
+      cartView: newState,
+    })
+  }
+
+
   render() {
     return (
       <div className="App">
@@ -22,9 +33,16 @@ class App extends Component {
         items with map function
         cart
         footer} */}
+        <nav>
+          <div className="cartDiv">
+            <button className="cartShowIcon">
+              <i class="fa fa-shopping-cart"></i>
+            </button>
+          </div>
+        </nav>
         <Header />
         <Item />
-        <Cart />
+        {/* <Cart /> */}
         <Footer />
       </div>
     );
