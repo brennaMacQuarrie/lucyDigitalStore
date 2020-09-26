@@ -16,6 +16,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: 'Lato', sans-serif;
+  
   background: rgb(252, 255, 250);
 }
 
@@ -25,6 +26,10 @@ body {
   src: local('Zapfino'), url(./fonts/ZapfinoLinotypeOne.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Sketch';
+  src: local('Sketch'), url(./fonts/SketchRockwell-Bold.ttf) format('truetype');
+}
 
 
 img {
@@ -105,10 +110,11 @@ h1 {
   font-size: 25rem;
   line-height: 40%;
 }
-h2 {
+h2,
+h3 {
     font-family: Zapfino, serif;
-
 }
+
 span {
     font-family: Zapfino, serif;
     font-size: 1.3rem;
@@ -137,55 +143,91 @@ span {
   margin: 10px;
 }
 .viewOptions li button {
-  border: none;
   padding: 3px 10px;
-  background: yellow;
-  border: 1px black solid;
+  border: none;
+  border: 1px transparent solid;
   border-radius: 5px;
+  background: tan;
+  font-family: 'Sketch';
 }
 
 .viewOptions li button:hover,
 .viewOptions li button:active {
   background: white;
-  border: 1px yellow solid;
+  border: 1px tan solid;
+  color: black;
 }
 
-.itemSection {
-  /* TODO this height will change when it becomes multi item */
-  height: 100vh;
-  padding: 5%;
-}
-.individualItem {
-  height: 250px;
-  width: 200px;
 
-  padding: 8px;
-  background: yellow;
-  border: black solid 1px;
-  border-radius: 5px;
+/* ITEMS STEEZ */
+
+/* this is the whole items section */
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-main {
+/* this is the items group */
+.mainDisplay {
+  width: 100%;
+  /* TODO MAKE GRID */
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
 }
+/* this is the individual */
+.individualItem {
+  height: 250px;
+  width: 200px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  padding: 8px;
+  margin: 10px;
+  background: #cbdb64;
+  border: black double 0.7px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px grey, -5px -5px 10px white;
+}
+h3 {
+  font-size: calc(1rem + 1vw);
+  line-height: 120%;
+  margin: 10px 0 0;
+}
+/* this is the image */
 .individualItem div {
   width: 90%;
   height: 90%;
   background: white;
   border: 0.2px black dotted;
-  margin: 10px;
+  border-radius: 3px;
+}
+.individualItem p {
+  margin: 3px auto;
+  font-size: calc(1rem + 0.7vw);
+  font-family: 'Sketch';
+}
+.individualItem button {
+  font-family: 'Sketch';
+  width: 90%;
+  border-radius: 3px;
+  border: none;
+  border: 1px white solid;
+  transition: all 0.3s;
+}
+.individualItem button:hover,
+.individualItem button:focus {
+  background: tan;
 }
 
-/* TODO this changes size revealing margin?? */
+/* TODO this changes size revealing whitespace?? */
 .footer {
   background: black;
   color: white;
-  padding: 1%;
+  font-family: 'Sketch';
+  padding: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

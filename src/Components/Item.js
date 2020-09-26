@@ -1,48 +1,16 @@
 import React from 'react';
+// import * as Image from '../assets';
 
 const Item = (props) => {
     return (
-      <div className="itemSection">
-        <h2>View By</h2>
-        <ul className="viewOptions">
-          <li>
-            <button>Paintings</button>
-          </li>
-          <li>
-            <button>All</button>
-          </li>
-          <li>
-            <button>Jewelry</button>
-          </li>
-        </ul>
-
-        <main>
-          <div className="individualItem">
-            <div>
-              <p>this is the image okay</p>
-            </div>
-            <p>item title</p>
-            <p>item cost</p>
-            <button>add to cart</button>
-          </div>
-
-          <div className="individualItem">
-            <div>
-              <p>this is the image okay</p>
-            </div>
-            <p>item title</p>
-            <p>item cost</p>
-            <button>add to cart</button>
-          </div>
-          <div className="individualItem">
-            <div>
-              <p>this is the image okay</p>
-            </div>
-            <p>item title</p>
-            <p>item cost</p>
-            <button>add to cart</button>
-          </div>
-        </main>
+      <div className="individualItem" value={props.type}>
+        <div>
+          <img src={props.imgRef} alt={props.title}/>
+        </div>
+        
+        <h3>{props.title}</h3>
+        <p>{props.price}</p>
+        <button>add to cart</button>
       </div>
     );
 }
