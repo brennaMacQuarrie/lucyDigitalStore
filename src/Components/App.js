@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import firebase from './firebase';
 import Header from './Header';
 import Item from './Item';
+import ToggleDisplay from "react-toggle-display";
 import Cart from './Cart';
 import Footer from './Footer';
 import '../App.css';
@@ -11,7 +12,7 @@ class App extends Component {
     super();
     this.state = {
       cart: [],
-      cartView: false,
+      show: false,
       items: [],
     };
   }
@@ -20,11 +21,10 @@ class App extends Component {
     const dbRef = firebase.database().ref();
     dbRef.on("value", (response) => {
 
-      // building a new array for the items in my app state
+      // building a new array for the items (cart???) in my app state
       const newState = [];
       const data = response.val();
       const items = data.items;
-
       items.forEach((item) => {
         newState.push(item); // this works
       });
@@ -36,34 +36,74 @@ class App extends Component {
   }
 
   // this should be a function to change the state of the cartView, toggling between visible and non visible
-  cartView = () => {
-    
+  handleCart = () => {
+    this.setState({
+      show: !this.state.show,
+    });
   };
 
-
-
-
   handleJewelry = () => {
-    // i want to alter items in state
-    // if dbRef.data.items.item.type == jewelry
-    const jewelryItems = [];
+      const dbRef = firebase.database().ref();
+      dbRef.on("value", (response) => {
+      // building a jewelry array
+      const jewelryArray = [];
+      const data = response.val();
+      
+      const items = data.items;
+      // array of objects      
+      items.forEach((item) => {
+        if (item.type == "jewelry") {
+          jewelryArray.push(item); // this works
+        }
+      });
 
-    const itemsArray = firebase.database().ref("items");
-    // this is an object, has items array, with nested item objects
-    console.log(itemsArray);
-
-
-    this.setState({
-      items: jewelryItems,
+      this.setState({
+        items: jewelryArray,
+      });
     });
   }
 
 
   handlePaintings = () => {
     // i want to alter items in state
+    const dbRef = firebase.database().ref();
+    dbRef.on("value", (response) => {
+      // building a jewelry array
+      const paintingsArray = [];
+      const data = response.val();
+
+      const items = data.items;
+      // array of objects
+
+      items.forEach((item) => {
+        if (item.type == "painting") {
+          paintingsArray.push(item); // this works
+        }
+      });
+
+      this.setState({
+        items: paintingsArray,
+      });
+    });
   }
+
+
   handleAll = () => {
     // i want to alter items in state
+    const dbRef = firebase.database().ref();
+    dbRef.on("value", (response) => {
+      // building a new array for the items (cart???) in my app state
+      const newState = [];
+      const data = response.val();
+      const items = data.items;
+      items.forEach((item) => {
+        newState.push(item); // this works
+      });
+
+      this.setState({
+        items: newState,
+      });
+    });
   }
 
   render() {
@@ -76,9 +116,16 @@ class App extends Component {
         footer} */}
         <nav>
           <div className="cartDiv">
-            <button className="cartShowIcon" onClick={this.cartView}>
+            <button
+              onClick={() => this.handleCart()}
+              className="cartShowIcon"
+            >
               <i className="fa fa-shopping-cart"></i>
             </button>
+          <ToggleDisplay className="cart" show={this.state.show}>
+            <h2>Your Cart</h2>
+            <Cart />
+          </ToggleDisplay>
           </div>
         </nav>
 
@@ -113,7 +160,6 @@ class App extends Component {
           </div>
         </main>
 
-        <Cart />
         <Footer />
       </div>
     );

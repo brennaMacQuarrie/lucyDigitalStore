@@ -12,6 +12,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 body {
   font-size: 1.6rem;
@@ -29,6 +30,11 @@ body {
 @font-face {
   font-family: 'Sketch';
   src: local('Sketch'), url(./fonts/SketchRockwell-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Larch';
+  src: local('Larch'), url(./fonts/BrightLarch_PERSONAL_USE.ttf) format('truetype');
 }
 
 
@@ -90,6 +96,24 @@ p {
   border: none;
   padding: 20px 40px;
   cursor: copy;
+  z-index: 998;
+}
+i.fa {
+  z-index: 999;
+  font-size: calc(1.6rem + 0.6vw);
+}
+.cart {
+  position: absolute;
+  right: 0px;
+  top: 0;
+  height: 100vh;
+  width: 40vw;
+  padding: 3%;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: left;
+  transition: 0.9s all;
+  border: 1px black dotted;
+  z-index: -1;
 }
 
 .logoBox {
@@ -110,8 +134,7 @@ h1 {
   font-size: 25rem;
   line-height: 40%;
 }
-h2,
-h3 {
+h2 {
     font-family: Zapfino, serif;
 }
 
@@ -120,18 +143,7 @@ span {
     font-size: 1.3rem;
 }
 
-.cart {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100vh;
-  width: 30vw;
-  padding: 3%;
-  background: rgba(255, 255, 255, 0.3);
-  text-align: left;
-  transition: 0.8s all;
-  border: 1px black dotted;
-}
+
 
 .viewOptions {
   display: flex;
@@ -192,9 +204,11 @@ main {
   box-shadow: 5px 5px 10px grey, -5px -5px 10px white;
 }
 h3 {
-  font-size: calc(1rem + 1vw);
+  font-size: calc(1.8rem + 1vw);
   line-height: 120%;
   margin: 10px 0 0;
+  font-family: Larch, serif;
+
 }
 /* this is the image */
 .individualItem div {
@@ -222,6 +236,23 @@ h3 {
   background: tan;
 }
 
+/* cart item display */
+.fakeItem { 
+  display: flex;
+  justify-content: space-between;
+}
+.fakeItem img {
+  width: 30%;
+}
+.fakeItem p,
+h4 {
+  font-family: Sketch, serif;
+}
+.fakeItem button {
+  border: none;
+  background: transparent;
+  width: 20%;
+}
 /* TODO this changes size revealing whitespace?? */
 .footer {
   background: black;
