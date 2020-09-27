@@ -11,9 +11,7 @@ const Item = (props) => {
         
         <h3>{props.title}</h3>
         <p>{props.price}</p>
-        <button
-          onClick={props.cart}
-          >add to cart</button>
+        {/* <button onClick={props.cart}>add to cart</button> */}
       </div>
     );
 }

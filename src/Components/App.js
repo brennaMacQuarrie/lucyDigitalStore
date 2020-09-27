@@ -17,10 +17,10 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // Items population
     const dbRef = firebase.database().ref();
     dbRef.on("value", (response) => {
 
-      // building a new array for the items (cart???) in my app state
       const newState = [];
       const data = response.val();
       const items = data.items;
@@ -30,6 +30,25 @@ class App extends Component {
 
       this.setState({
         items: newState,
+      });
+    });
+
+    //Cart
+    const dbRefCart = firebase.database().ref('Cart');
+    dbRefCart.on("value", (response) => {
+
+      const newCart = [];
+      const data = response.val();
+      // const items = data.items;
+      for (let key in data) {
+        newCart.push({
+          key: key,
+          item: data[key].item,
+        })
+      }
+      
+      this.setState({
+        cart: newCart,
       });
     });
   }
@@ -105,11 +124,16 @@ class App extends Component {
     });
   }
 
-  addToCart = () => {
-    // do the thing with the cart
+  addToCart = (item) => {
     console.log('add to cart');
-    // setState on cart to push item clicked
+    const dbRef = firebase.database().ref('Cart');
+    dbRef.push(item)
+  }
 
+  removeFromCart = (itemKey) => {
+    console.log('remove me');
+    const dbRef = firebase.database().ref('Cart');
+    dbRef.child(itemKey).remove();
   }
 
   render() {
@@ -117,6 +141,13 @@ class App extends Component {
       <div className="App">
 
         <nav>
+          <div className="blogContainer">
+            <div className="gradient">
+              <div className="blogLink">
+                <a href="https://friends4trees4life.com/">Blog</a>
+              </div>
+            </div>
+          </div>
           <div className="cartDiv">
             <button
               onClick={() => this.handleCart()}
@@ -128,20 +159,26 @@ class App extends Component {
           <ToggleDisplay className="cart" show={this.state.show}>
 
             <h2>Your Cart</h2>
-          <Cart />
-            
+            {this.state.cart.map((cart) => {
+              return (
+                <Cart 
+                  key={cart.key}
+                  image={cart.imageRef}
+                  title={cart.name}
+                  price={cart.price}
+                  type={cart.type}
+                  cartRemove={() => {
+                    this.removeFromCart(cart.key)
+                  }
+                }
+                />
+              );
+            })}
 
           </ToggleDisplay>
           </div>
         </nav>
 
-        <div className="blogContainer">
-          <div className="gradient">
-            <div className="blogLink">
-              <a href="https://friends4trees4life.com/">Blog</a>
-            </div>
-          </div>
-        </div>
 
         <Header />
 
@@ -162,16 +199,26 @@ class App extends Component {
           <div className="mainDisplay">
             {this.state.items.map((item) => {
               return (
-                <Item
-                  key={item.id}
-                  image={item.imageRef}
-                  title={item.name}
-                  price={item.price}
-                  type={item.type}
-                  cart={this.addToCart}
-                  // addToCart will be the function
-                  
-                />
+                <div className="item">
+                  <Item
+                    key={item.key}
+                    image={item.imageRef}
+                    title={item.name}
+                    price={item.price}
+                    type={item.type}
+                    // cart={() => {
+                    //   this.addToCart()
+                    //   }
+                    // }
+                  />
+                  <button onClick={() => {
+                    this.addToCart(item)
+                    }
+                  }
+                  >add to cart</button>
+
+                </div>
+
               );
             })}
           </div>
@@ -190,16 +237,3 @@ export default App;
 
 
 
-{/* {this.state.cart.map((cart) => {
-                return ( */}
-{/* <Item
-                    key={cart.id}
-                    imageRef={cart.imageRef}
-                    title={cart.name}
-                    price={cart.price}
-                    type={cart.type}
-                  /> */}
-{/* )
-              })
-            }
-           */}
