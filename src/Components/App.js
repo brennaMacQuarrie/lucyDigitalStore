@@ -162,7 +162,7 @@ class App extends Component {
             {this.state.cart.map((cart) => {
               return (
                 <Cart 
-                  key={cart.key}
+                  key={cart.id}
                   image={cart.imageRef}
                   title={cart.name}
                   price={cart.price}
@@ -206,16 +206,16 @@ class App extends Component {
                     title={item.name}
                     price={item.price}
                     type={item.type}
-                    // cart={() => {
-                    //   this.addToCart()
-                    //   }
-                    // }
+                    addToCart={() => {
+                      this.addToCart(item)
+                      }
+                    }
                   />
-                  <button onClick={() => {
+                  {/* <button onClick={() => {
                     this.addToCart(item)
                     }
                   }
-                  >add to cart</button>
+                  >add to cart</button> */}
 
                 </div>
 

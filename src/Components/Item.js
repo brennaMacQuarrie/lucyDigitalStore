@@ -3,6 +3,7 @@ import React from 'react';
 
 
 const Item = (props) => {
+  
     return (
       <div className="individualItem" value={props.type}>
         <div>
@@ -11,9 +12,11 @@ const Item = (props) => {
         
         <h3>{props.title}</h3>
         <p>{props.price}</p>
-        {/* <button onClick={props.cart}>add to cart</button> */}
+        {/* // does this need an argument? */}
+        <button onClick={props.addToCart}>add to cart</button>
       </div>
     );
 }
 
 export default Item;
+// 

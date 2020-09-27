@@ -1,22 +1,20 @@
 import React from 'react';
 import firebase from './firebase';
 
-class Cart extends React.Component {
-
-    render() {
+const Cart = (props) => {
+    // console.log(props);
         return (
             <div className="fakeItem">
-                <img src={this.props.imgRef} alt="green mala." />
+                <img src={props.imgRef} alt="green mala." />
                 <div>
-                    <h4>ItemName</h4>
-                    <p>price</p>
+                    <h4>{props.name}</h4>
+                    <p>{props.price}</p>
                 </div>
-                <button onClick={this.props.cartRemove}>
+                <button onClick={props.cartRemove}>
                     <i className="fa fa-trash" aria-hidden="true"></i>
                 </button>
             </div>
         );
-    }
 }
 
 export default Cart;
