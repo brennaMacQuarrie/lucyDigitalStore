@@ -23,9 +23,11 @@ class App extends Component {
 
       const newState = [];
       const data = response.val();
+      // gets into items array in my db
       const items = data.items;
+
       items.forEach((item) => {
-        newState.push(item); // this works
+        newState.push(item); 
       });
 
       this.setState({
@@ -39,7 +41,9 @@ class App extends Component {
 
       const newCart = [];
       const data = response.val();
+
       // const items = data.items;
+
       for (let key in data) {
         newCart.push({
           key: key,
@@ -53,25 +57,23 @@ class App extends Component {
     });
   }
 
-  // this should be a function to change the state of the cartView, toggling between visible and non visible
+  // function to change the state of the cartView
   handleCart = () => {
     this.setState({
       show: !this.state.show,
     });
   };
-
+  // 3 functions to show only specific items based on TYPE
   handleJewelry = () => {
       const dbRef = firebase.database().ref();
       dbRef.on("value", (response) => {
       // building a jewelry array
       const jewelryArray = [];
       const data = response.val();
-      
       const items = data.items;
-      // array of objects      
       items.forEach((item) => {
         if (item.type == "jewelry") {
-          jewelryArray.push(item); // this works
+          jewelryArray.push(item); 
         }
       });
 
@@ -81,21 +83,16 @@ class App extends Component {
     });
   }
 
-
   handlePaintings = () => {
-    // i want to alter items in state
     const dbRef = firebase.database().ref();
     dbRef.on("value", (response) => {
-      // building a jewelry array
+      // building a paintings array
       const paintingsArray = [];
       const data = response.val();
-
       const items = data.items;
-      // array of objects
-
       items.forEach((item) => {
         if (item.type == "painting") {
-          paintingsArray.push(item); // this works
+          paintingsArray.push(item); 
         }
       });
 
@@ -105,17 +102,15 @@ class App extends Component {
     });
   }
 
-
   handleAll = () => {
-    // i want to alter items in state
     const dbRef = firebase.database().ref();
     dbRef.on("value", (response) => {
-      // building a new array for the items (cart???) in my app state
+      // revert to original db population
       const newState = [];
       const data = response.val();
       const items = data.items;
       items.forEach((item) => {
-        newState.push(item); // this works
+        newState.push(item); 
       });
 
       this.setState({
@@ -124,17 +119,20 @@ class App extends Component {
     });
   }
 
-  addToCart = (item) => {
-    console.log('add to cart');
+
+  // two button click handlers that dymanically alter Cart in db
+  addToCart = (itemToAdd) => {
     const dbRef = firebase.database().ref('Cart');
-    dbRef.push(item)
+    dbRef.push(itemToAdd)
   }
 
-  removeFromCart = (itemKey) => {
-    console.log('remove me');
+  removeFromCart = (itemTobeRemoved) => {
     const dbRef = firebase.database().ref('Cart');
-    dbRef.child(itemKey).remove();
+    dbRef.child(itemTobeRemoved).remove();
   }
+
+
+
 
   render() {
     return (
@@ -159,22 +157,26 @@ class App extends Component {
           <ToggleDisplay className="cart" show={this.state.show}>
 
             <h2>Your Cart</h2>
-            {this.state.cart.map((cart) => {
-              return (
-                <Cart 
-                  key={cart.id}
-                  image={cart.imageRef}
-                  title={cart.name}
-                  price={cart.price}
-                  type={cart.type}
-                  cartRemove={() => {
-                    this.removeFromCart(cart.key)
-                  }
-                }
-                />
-              );
-            })}
-
+            {this.state.cart.length > 0 ? (
+              <div className="cartContainer">
+                {this.state.cart.map((cartItem) => {
+                  console.log(this.state.cart)
+                  return (
+                    <Cart 
+                      key={cartItem.id}
+                      image={cartItem.imageRef}
+                      title={cartItem.name}
+                      price={cartItem.price}
+                      type={cartItem.type}
+                      cartRemove={() => {
+                        this.removeFromCart(cartItem.key)
+                      }
+                    }
+                    />
+                  );
+                })}
+              </div>) : null}
+            
           </ToggleDisplay>
           </div>
         </nav>

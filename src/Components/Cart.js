@@ -7,7 +7,7 @@ const Cart = (props) => {
             <div className="fakeItem">
                 <img src={props.imgRef} alt="green mala." />
                 <div>
-                    <h4>{props.name}</h4>
+                    <h4>{props.title}</h4>
                     <p>{props.price}</p>
                 </div>
                 <button onClick={props.cartRemove}>
