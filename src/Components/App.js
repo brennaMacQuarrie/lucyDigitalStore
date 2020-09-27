@@ -4,7 +4,6 @@ import Header from './Header';
 import Item from './Item';
 import ToggleDisplay from "react-toggle-display";
 import Cart from './Cart';
-import Footer from './Footer';
 import '../App.css';
 
 class App extends Component {
@@ -106,14 +105,17 @@ class App extends Component {
     });
   }
 
+  addToCart = () => {
+    // do the thing with the cart
+    console.log('add to cart');
+    // setState on cart to push item clicked
+
+  }
+
   render() {
     return (
       <div className="App">
-        {/* {this is where i will import all the different parts of the site
-        header
-        items with map function
-        cart
-        footer} */}
+
         <nav>
           <div className="cartDiv">
             <button
@@ -122,12 +124,24 @@ class App extends Component {
             >
               <i className="fa fa-shopping-cart"></i>
             </button>
+
           <ToggleDisplay className="cart" show={this.state.show}>
+
             <h2>Your Cart</h2>
-            <Cart />
+          <Cart />
+            
+
           </ToggleDisplay>
           </div>
         </nav>
+
+        <div className="blogContainer">
+          <div className="gradient">
+            <div className="blogLink">
+              <a href="https://friends4trees4life.com/">Blog</a>
+            </div>
+          </div>
+        </div>
 
         <Header />
 
@@ -150,20 +164,42 @@ class App extends Component {
               return (
                 <Item
                   key={item.id}
-                  imageRef={item.imageRef}
+                  image={item.imageRef}
                   title={item.name}
                   price={item.price}
                   type={item.type}
+                  cart={this.addToCart}
+                  // addToCart will be the function
+                  
                 />
               );
             })}
           </div>
         </main>
 
-        <Footer />
+        <footer>
+          {/* <img src="/assets/braceletMagnesite.jpeg" alt=""/> */}
+          <p>created at Juno College by <a href="https://brennamacquarrie.dev">Brenna MacQuarrie</a></p>
+        </footer>
       </div>
     );
   }
 }
 
 export default App;
+
+
+
+{/* {this.state.cart.map((cart) => {
+                return ( */}
+{/* <Item
+                    key={cart.id}
+                    imageRef={cart.imageRef}
+                    title={cart.name}
+                    price={cart.price}
+                    type={cart.type}
+                  /> */}
+{/* )
+              })
+            }
+           */}

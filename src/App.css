@@ -69,11 +69,6 @@ p {
   position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .header {
   /* TODO build hamburger menu, cart, socials */
   height: 100vh;
@@ -83,6 +78,8 @@ p {
   align-items: center;
   font: 'Zapfino', serif;
 }
+
+
 .App nav {
   width: 100%;
   display: flex;
@@ -98,22 +95,46 @@ p {
   cursor: copy;
   z-index: 998;
 }
+
+.gradient {
+  position: absolute;
+  top: -200;
+  font-family: Sketch, serif;
+  font-size: calc(1.3rem + 0.6vw);
+  background: black;
+  border: 0.8px black solid;
+  border-radius: 50%;
+  height: 65px;
+  width: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s all;
+}
+.blogLink {
+  background: white;
+  height: 60px;
+  width: 60px;
+  border: 0.8px black solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blogLink a {
+  color: black;
+  padding: 20px;
+}
+
+.gradient:hover,
+.gradient:active {
+  background: linear-gradient(-45deg, #cbdb64 20%, rgb(26, 26, 228) 100%);
+}
+
+
 i.fa {
   z-index: 999;
   font-size: calc(1.6rem + 0.6vw);
-}
-.cart {
-  position: absolute;
-  right: 0px;
-  top: 0;
-  height: 100vh;
-  width: 40vw;
-  padding: 3%;
-  background: rgba(255, 255, 255, 0.9);
-  text-align: left;
-  transition: 0.9s all;
-  border: 1px black dotted;
-  z-index: -1;
 }
 
 .logoBox {
@@ -138,12 +159,9 @@ h2 {
     font-family: Zapfino, serif;
 }
 
-span {
-    font-family: Zapfino, serif;
-    font-size: 1.3rem;
+footer a {
+  color: #cbdb64;
 }
-
-
 
 .viewOptions {
   display: flex;
@@ -182,14 +200,14 @@ main {
 /* this is the items group */
 .mainDisplay {
   width: 100%;
-  /* TODO MAKE GRID */
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  padding: 20px 0;
 }
 /* this is the individual */
 .individualItem {
-  height: 250px;
+  height: 100%;
   width: 200px;
 
   display: flex;
@@ -200,23 +218,23 @@ main {
   margin: 10px;
   background: #cbdb64;
   border: black double 0.7px;
-  border-radius: 5px;
+  border-radius: 2px;
   box-shadow: 5px 5px 10px grey, -5px -5px 10px white;
 }
 h3 {
   font-size: calc(1.8rem + 1vw);
-  line-height: 120%;
+  line-height: 90%;
   margin: 10px 0 0;
   font-family: Larch, serif;
-
+  height: 50px;
 }
 /* this is the image */
 .individualItem div {
   width: 90%;
   height: 90%;
   background: white;
-  border: 0.2px black dotted;
-  border-radius: 3px;
+  border: 0.2px white double;
+  border-radius: 1px;
 }
 .individualItem p {
   margin: 3px auto;
@@ -226,7 +244,7 @@ h3 {
 .individualItem button {
   font-family: 'Sketch';
   width: 90%;
-  border-radius: 3px;
+  border-radius: 2px;
   border: none;
   border: 1px white solid;
   transition: all 0.3s;
@@ -236,25 +254,55 @@ h3 {
   background: tan;
 }
 
-/* cart item display */
+/* cart & cartitem display */
+.cart {
+  position: absolute;
+  right: 0px;
+  top: 0;
+  height: 100vh;
+  width: 40vw;
+  padding: 6% 3%;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: left;
+  transition: 0.9s all;
+  border: 1px black dotted;
+  z-index: -1;
+}
+
 .fakeItem { 
   display: flex;
   justify-content: space-between;
+  height: 18%;
 }
 .fakeItem img {
-  width: 30%;
+  width: 50%;
+  border: black solid 1px;
+}
+.cartItemInfo {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: black solid 0.2px;
+  padding: 4%;
 }
 .fakeItem p,
 h4 {
   font-family: Sketch, serif;
+  margin: 0;
 }
-.fakeItem button {
+.cartTrash {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.cartTrash button {
   border: none;
   background: transparent;
-  width: 20%;
+  padding: 0;
 }
-/* TODO this changes size revealing whitespace?? */
-.footer {
+
+footer {
   background: black;
   color: white;
   font-family: 'Sketch';

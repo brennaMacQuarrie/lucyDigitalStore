@@ -19,11 +19,11 @@ class Cart extends React.Component {
             // building a new array for the items (cart???) in my app state
             const cartItems = [];
             const data = response.val();
-            
+            console.log(data);
             // data.forEach((item) => {
-            //   // console.log(item);
+            //   console.log(item);
             //   cartItems.push(item); // this works
-            // });
+            // })
 
             this.setState({
                 items: cartItems,
