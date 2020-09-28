@@ -135,7 +135,6 @@ class App extends Component {
   addToCart = (itemToAdd) => {
     const dbRef = firebase.database().ref('Cart');
     dbRef.push(itemToAdd);
-    // console.log(itemToAdd);
     // this is the item object with no key
   }
 
@@ -148,7 +147,6 @@ class App extends Component {
 
 
   render() {
-    // console.log(this.state.cart);
     const copyright = '\u00A9'; 
     // this is AN item object with all undefined info
     return (
