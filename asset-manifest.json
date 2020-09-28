@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/projectFive/static/css/main.e1e0d034.chunk.css",
+    "main.js": "/projectFive/static/js/main.cd5b568c.chunk.js",
+    "main.js.map": "/projectFive/static/js/main.cd5b568c.chunk.js.map",
+    "runtime-main.js": "/projectFive/static/js/runtime-main.46fe3550.js",
+    "runtime-main.js.map": "/projectFive/static/js/runtime-main.46fe3550.js.map",
+    "static/css/2.769e7e01.chunk.css": "/projectFive/static/css/2.769e7e01.chunk.css",
+    "static/js/2.d2acd32d.chunk.js": "/projectFive/static/js/2.d2acd32d.chunk.js",
+    "static/js/2.d2acd32d.chunk.js.map": "/projectFive/static/js/2.d2acd32d.chunk.js.map",
+    "index.html": "/projectFive/index.html",
+    "precache-manifest.0404e8b5bd928a45fe65fbe997325cd1.js": "/projectFive/precache-manifest.0404e8b5bd928a45fe65fbe997325cd1.js",
+    "service-worker.js": "/projectFive/service-worker.js",
+    "static/css/2.769e7e01.chunk.css.map": "/projectFive/static/css/2.769e7e01.chunk.css.map",
+    "static/css/main.e1e0d034.chunk.css.map": "/projectFive/static/css/main.e1e0d034.chunk.css.map",
+    "static/js/2.d2acd32d.chunk.js.LICENSE.txt": "/projectFive/static/js/2.d2acd32d.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/projectFive/static/media/ZapfinoLinotypeOne.2b07531c.ttf",
+    "static/media/font-awesome.min.css": "/projectFive/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.46fe3550.js",
+    "static/css/2.769e7e01.chunk.css",
+    "static/js/2.d2acd32d.chunk.js",
+    "static/css/main.e1e0d034.chunk.css",
+    "static/js/main.cd5b568c.chunk.js"
+  ]
+}
