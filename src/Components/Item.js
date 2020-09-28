@@ -1,5 +1,4 @@
 import React from 'react';
-// import * as Image from '../assets';
 
 
 const Item = (props) => {

@@ -5,112 +5,112 @@
             "name": "Mala - Green",
             "type": "jewelry",
             "price": "$45",
-            "imageRef": "/assets/malaGreen.jpg"
+            "imageRef": "../assets/malaGreen.jpg"
         },
         {
             "id": "2",
             "name": "Mala - Black",
             "type": "jewelry",
             "price": "$45",
-            "imageRef": "/assets/malaBlack.jpg"
+            "imageRef": "../assets/malaBlack.jpg"
         },
         {
             "id": "3",
             "name": "Mala - Gold",
             "type": "jewelry",
             "price": "$45",
-            "imageRef": "/assets/malaGold.jpg"
+            "imageRef": "../assets/malaGold.jpg"
         },
         {
             "id": "4",
             "name": "Bracelet - Magnesite",
             "type": "jewelry",
             "price": "$28",
-            "imageRef": "/assets/braceletMagnesite.jpg"
+            "imageRef": "../assets/braceletMagnesite.jpg"
         },
         {
             "id": "5",
             "name": "Bracelet - Mixed Stone",
             "type": "jewelry",
             "price": "$28",
-            "imageRef": "/assets/braceletMixed.jpg"
+            "imageRef": "../assets/braceletMixed.jpg"
         },
         {
             "id": "6",
             "name": "Bracelet - Peach",
             "type": "jewelry",
             "price": "$28",
-            "imageRef": "/assets/braceletPeach.jpg"
+            "imageRef": "../assets/braceletPeach.jpg"
         },
         {
             "id": "7",
             "name": "Bracelet - Turquoise",
             "type": "jewelry",
             "price": "$28",
-            "imageRef": "/assets/braceletTurquoise.jpg"
+            "imageRef": "../assets/braceletTurquoise.jpg"
         },
         {
             "id": "8",
             "name": "Earrings - Transparent",
             "type": "jewelry",
             "price": "$14",
-            "imageRef": "/assets/earringDiamond.jpg"
+            "imageRef": "../assets/earringDiamond.jpg"
         },
         {
             "id": "9",
             "name": "Earrings - Original Feather",
             "type": "jewelry",
             "price": "$14",
-            "imageRef": "/assets/earringFeather.jpg"
+            "imageRef": "../assets/earringFeather.jpg"
         },
         {
             "id": "10",
             "name": "Earrings - Gold Leaf",
             "type": "jewelry",
             "price": "$14",
-            "imageRef": "/assets/earringGoldLeaf.jpg"
+            "imageRef": "../assets/earringGoldLeaf.jpg"
         },
         {
             "id": "11",
             "name": "Earrings - Light Pink",
             "type": "jewelry",
             "price": "$14",
-            "imageRef": "/assets/earringPink.jpg"
+            "imageRef": "../assets/earringPink.jpg"
         },
         {
             "id": "12",
             "name": "Earrings - Tan & Beige",
             "type": "jewelry",
             "price": "$14",
-            "imageRef": "/assets/earringTan.jpg"
+            "imageRef": "../assets/earringTan.jpg"
         },
         {
             "id": "13",
             "name": "Earrings - White Stone",
             "type": "jewelry",
             "price": "$14",
-            "imageRef": "/assets/earringWhite.jpg"
+            "imageRef": "../assets/earringWhite.jpg"
         },
         {
             "id": "14",
             "name": "The Puffin",
             "type": "painting",
             "price": "$28",
-            "imageRef": "/assets/paintingPuffin.jpg"
+            "imageRef": "../assets/paintingPuffin.jpg"
         },
         {
             "id": "15",
             "name": "The Woodpecker",
             "type": "painting",
             "price": "$28",
-            "imageRef": "/assets/paintingRedBird.jpg"
+            "imageRef": "../assets/paintingRedBird.jpg"
         },
         {
             "id": "16",
             "name": "The Kingfisher",
             "type": "painting",
             "price": "$28",
-            "imageRef": "/assets/paintingBlueBird2.jpg"
+            "imageRef": "../assets/paintingBlueBird2.jpg"
         }
     ]
 }

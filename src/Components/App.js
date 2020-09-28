@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import images from './images';
 import firebase from './firebase';
 import Header from './Header';
 import Item from './Item';
@@ -64,6 +65,11 @@ class App extends Component {
       show: !this.state.show,
     });
   };
+
+  //IMAGE DISPLAY
+  displayImages = (imageID) => {
+    return images[imageID - 1].url;
+  }
 
   // 3 functions to show only specific items based on TYPE
   handleJewelry = () => {
@@ -144,10 +150,8 @@ class App extends Component {
     // this is AN item object with all undefined info
     return (
       <div className="App">
-
         <nav>
           <div className="blogContainer">
-
             <div className="gradient">
               <div className="blogLink">
                 <a href="https://friends4trees4life.com/">Blog</a>
@@ -156,39 +160,35 @@ class App extends Component {
           </div>
 
           <div className="cartDiv">
-
             <button onClick={() => this.handleCart()} className="cartShowIcon">
               <i className="fa fa-shopping-cart"></i>
             </button>
 
-          <ToggleDisplay className="cart" show={this.state.show}>
-
-            <h2>Your Cart</h2>
-            {this.state.cart.length > 0 ? (
-              <div className="cartContainer">
-                {this.state.cart.map((cartItem) => {
-                  // this is also an object with all undefined info
-                  console.log(cartItem);
-                  return (
-                    <Cart 
-                      key={cartItem.id}
-                      image={cartItem.imageRef}
-                      title={cartItem.name}
-                      price={cartItem.price}
-                      type={cartItem.type}
-                      cartRemove={() => {
-                        this.removeFromCart(cartItem.key)
-                      }
-                    }
-                    />
-                  );
-                })}
-              </div>) : null}
-            
-          </ToggleDisplay>
+            <ToggleDisplay className="cart" show={this.state.show}>
+              <h2>Your Cart</h2>
+              {this.state.cart.length > 0 ? (
+                <div className="cartContainer">
+                  {this.state.cart.map((cartItem) => {
+                    // this is also an object with all undefined info
+                    console.log(cartItem);
+                    return (
+                      <Cart
+                        key={cartItem.id}
+                        image={cartItem.imageRef}
+                        title={cartItem.name}
+                        price={cartItem.price}
+                        type={cartItem.type}
+                        cartRemove={() => {
+                          this.removeFromCart(cartItem.key);
+                        }}
+                      />
+                    );
+                  })}
+                </div>
+              ) : null}
+            </ToggleDisplay>
           </div>
         </nav>
-
 
         <Header />
 
@@ -212,31 +212,27 @@ class App extends Component {
                 <div className="item">
                   <Item
                     key={item.key}
-                    image={item.imageRef}
+                    image={this.displayImages(item.id)}
                     title={item.name}
                     price={item.price}
                     type={item.type}
                     addToCart={() => {
-                      this.addToCart(item)
-                      }
-                    }
+                      this.addToCart(item);
+                    }}
                   />
-                  {/* <button onClick={() => {
-                    this.addToCart(item)
-                    }
-                  }
-                  >add to cart</button> */}
-
                 </div>
-
               );
             })}
           </div>
         </main>
 
         <footer>
-          {/* <img src="/assets/braceletMagnesite.jpeg" alt=""/> */}
-          <p>{copyright} Juno College by <a href="https://brennamacquarrie.dev">Brenna MacQuarrie</a></p>
+          
+          <p>
+            <img src="" alt=""/>
+            {copyright} Juno College by{" "}
+            <a href="https://brennamacquarrie.dev">Brenna MacQuarrie</a>
+          </p>
         </footer>
       </div>
     );
