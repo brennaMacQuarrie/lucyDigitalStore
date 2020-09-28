@@ -218,6 +218,7 @@ main {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  position: relative;
 }
 .item {
   height: 100%;
@@ -232,33 +233,40 @@ main {
 h3 {
   font-size: calc(1.8rem + 1vw);
   line-height: 90%;
-  margin: 10px 0 0;
+  margin: 10px 0;
   font-family: Larch, serif;
   height: 40px;
+  width: 90%;
+  border: 2px white dotted;
+  z-index: 3;
 }
 /* this is the image */
 .individualItem div {
   width: 90%;
   height: 90%;
   background: white;
-  border: 0.2px white solid;
+  border: 0.2px rgba(255, 255, 255, 0.3) solid;
 }
 .individualItem p {
-  margin: 3px auto;
   font-size: calc(1rem + 0.7vw);
   font-family: 'Sketch';
+  z-index: 1;
 }
 .individualItem button {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  visibility: hidden;
+  background: rgba(255, 255, 255, 0.8);
   font-family: 'Sketch';
-  width: 60%;
   border-radius: 2px;
   border: none;
   border: 1px white solid;
-  transition: all 0.3s;
 }
-.individualItem button:hover,
-.individualItem button:focus {
-  background: tan;
+.individualItem:hover button,
+.individualItem:focus button {
+  visibility: visible;
 }
 
 /* cart & cartitem display */
