@@ -54,6 +54,7 @@ class App extends Component {
       this.setState({
         cart: newCart,
       });
+      console.log(this.state.cart);
     });
   }
 
@@ -63,6 +64,7 @@ class App extends Component {
       show: !this.state.show,
     });
   };
+
   // 3 functions to show only specific items based on TYPE
   handleJewelry = () => {
       const dbRef = firebase.database().ref();
@@ -123,7 +125,9 @@ class App extends Component {
   // two button click handlers that dymanically alter Cart in db
   addToCart = (itemToAdd) => {
     const dbRef = firebase.database().ref('Cart');
-    dbRef.push(itemToAdd)
+    dbRef.push(itemToAdd);
+    console.log(itemToAdd);
+    // this is the item object with no key
   }
 
   removeFromCart = (itemTobeRemoved) => {
@@ -135,22 +139,25 @@ class App extends Component {
 
 
   render() {
+    console.log(this.state.cart);
+    const copyright = '\u00A9'; 
+    // this is AN item object with all undefined info
     return (
       <div className="App">
 
         <nav>
           <div className="blogContainer">
+
             <div className="gradient">
               <div className="blogLink">
                 <a href="https://friends4trees4life.com/">Blog</a>
               </div>
             </div>
           </div>
+
           <div className="cartDiv">
-            <button
-              onClick={() => this.handleCart()}
-              className="cartShowIcon"
-            >
+
+            <button onClick={() => this.handleCart()} className="cartShowIcon">
               <i className="fa fa-shopping-cart"></i>
             </button>
 
@@ -160,7 +167,8 @@ class App extends Component {
             {this.state.cart.length > 0 ? (
               <div className="cartContainer">
                 {this.state.cart.map((cartItem) => {
-                  console.log(this.state.cart)
+                  // this is also an object with all undefined info
+                  console.log(cartItem);
                   return (
                     <Cart 
                       key={cartItem.id}
@@ -228,7 +236,7 @@ class App extends Component {
 
         <footer>
           {/* <img src="/assets/braceletMagnesite.jpeg" alt=""/> */}
-          <p>created at Juno College by <a href="https://brennamacquarrie.dev">Brenna MacQuarrie</a></p>
+          <p>{copyright} Juno College by <a href="https://brennamacquarrie.dev">Brenna MacQuarrie</a></p>
         </footer>
       </div>
     );
