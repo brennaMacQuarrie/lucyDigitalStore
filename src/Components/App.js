@@ -48,14 +48,17 @@ class App extends Component {
       for (let key in data) {
         newCart.push({
           key: key,
-          item: data[key].item,
+          id: data[key].id,
+          imageRef: data[key].imageRef,
+          price: data[key].price,
+          name: data[key].name,
+          type: data[key].type,
         })
       }
       
       this.setState({
         cart: newCart,
       });
-      console.log(this.state.cart);
     });
   }
 
@@ -132,7 +135,7 @@ class App extends Component {
   addToCart = (itemToAdd) => {
     const dbRef = firebase.database().ref('Cart');
     dbRef.push(itemToAdd);
-    console.log(itemToAdd);
+    // console.log(itemToAdd);
     // this is the item object with no key
   }
 
@@ -145,7 +148,7 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state.cart);
+    // console.log(this.state.cart);
     const copyright = '\u00A9'; 
     // this is AN item object with all undefined info
     return (
@@ -169,12 +172,11 @@ class App extends Component {
               {this.state.cart.length > 0 ? (
                 <div className="cartContainer">
                   {this.state.cart.map((cartItem) => {
-                    // this is also an object with all undefined info
-                    console.log(cartItem);
+                    
                     return (
                       <Cart
-                        key={cartItem.id}
-                        image={cartItem.imageRef}
+                        key={cartItem.key}
+                        image={this.displayImages(cartItem.id)}
                         title={cartItem.name}
                         price={cartItem.price}
                         type={cartItem.type}
@@ -183,6 +185,7 @@ class App extends Component {
                         }}
                       />
                     );
+
                   })}
                 </div>
               ) : null}

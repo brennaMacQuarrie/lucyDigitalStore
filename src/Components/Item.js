@@ -10,12 +10,10 @@ const Item = (props) => {
         </div>
         
         <h3>{props.title}</h3>
-        <p>{props.price}</p>
-        {/* // does this need an argument? */}
+        <p>Price: {props.price}</p>
         <button onClick={props.addToCart}>add to cart</button>
       </div>
     );
 }
 
 export default Item;
-// 
