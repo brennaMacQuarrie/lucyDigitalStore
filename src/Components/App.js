@@ -148,7 +148,6 @@ class App extends Component {
 
   render() {
     const copyright = '\u00A9'; 
-    // this is AN item object with all undefined info
     return (
       <div className="App">
         <nav>
@@ -170,7 +169,6 @@ class App extends Component {
               {this.state.cart.length > 0 ? (
                 <div className="cartContainer">
                   {this.state.cart.map((cartItem) => {
-                    
                     return (
                       <Cart
                         key={cartItem.key}
@@ -183,8 +181,11 @@ class App extends Component {
                         }}
                       />
                     );
-
                   })}
+                  <div className="priceTotal">
+                    <h4>Total:</h4>
+                    <h5>00.00</h5>
+                  </div>
                 </div>
               ) : null}
             </ToggleDisplay>
@@ -228,9 +229,8 @@ class App extends Component {
         </main>
 
         <footer>
-          
           <p>
-            <img src="" alt=""/>
+            <img src="" alt="" />
             {copyright} Juno College by{" "}
             <a href="https://brennamacquarrie.dev">Brenna MacQuarrie</a>
           </p>
