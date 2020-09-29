@@ -154,8 +154,6 @@ class App extends Component {
       })      
   }
 
-
-
   removeFromCart = (itemTobeRemoved) => {
     const dbRef = firebase.database().ref('Cart');
     dbRef.child(itemTobeRemoved).remove();
@@ -176,6 +174,7 @@ class App extends Component {
           </div>
 
           <div className="cartDiv">
+
             <button onClick={() => this.handleCart()} className="cartShowIcon">
               <i className="fa fa-shopping-cart"></i>
             </button>
@@ -198,12 +197,12 @@ class App extends Component {
                       />
                     );
                   })}
-                  <div className="priceTotal">
-                    <h4>Total:</h4>
-                    <h5>${this.state.priceTotal}</h5>
-                  </div>
                 </div>
               ) : null}
+            <div className="priceTotal">
+              <h4>Total:</h4>
+              <h5>${this.state.priceTotal}</h5>
+            </div>
             </ToggleDisplay>
           </div>
         </nav>

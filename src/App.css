@@ -82,7 +82,8 @@ p {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  position: absolute;
+  position: fixed;
+  z-index: 99;
 }
 
 .cartShowIcon {
@@ -217,6 +218,7 @@ main {
   align-items: center;
   padding: 10px;
   position: relative;
+  z-index: 0;
 }
 .item {
   height: 100%;
@@ -322,7 +324,7 @@ h3 {
   justify-content: space-between;
   width: 90%;
   margin: 10px auto;
-  border-bottom: 2px black solid;
+  border-top: 2px black solid;
 }
 .cart h4,
 .cart h5 {
