@@ -6,12 +6,14 @@ import Item from './Item';
 import ToggleDisplay from "react-toggle-display";
 import Cart from './Cart';
 import '../App.css';
+import { getQueriesForElement } from '@testing-library/react';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       cart: [],
+      priceTotal: 0,
       show: false,
       items: [],
     };
@@ -43,8 +45,6 @@ class App extends Component {
       const newCart = [];
       const data = response.val();
 
-      // const items = data.items;
-
       for (let key in data) {
         newCart.push({
           key: key,
@@ -58,7 +58,7 @@ class App extends Component {
       
       this.setState({
         cart: newCart,
-      });
+      }, this.priceTotal);
     });
   }
 
@@ -137,13 +137,27 @@ class App extends Component {
     dbRef.push(itemToAdd);
     // this is the item object with no key
   }
+    
+  priceTotal = () => {
+      // gives me one number at a time in an array
+      let sumTotal = this.state.cart.map((item) => {
+        return item.price;
+      })
+      const reducer = (accumulator, currentValue) => accumulator + currentValue;
+      
+      sumTotal.length > 0 ? console.log(sumTotal.reduce(reducer)) : console.log('zero');
+
+      this.setState({
+        priceTotal: sumTotal,
+      })      
+  }
+
+
 
   removeFromCart = (itemTobeRemoved) => {
     const dbRef = firebase.database().ref('Cart');
     dbRef.child(itemTobeRemoved).remove();
   }
-
-
 
 
   render() {
@@ -184,7 +198,7 @@ class App extends Component {
                   })}
                   <div className="priceTotal">
                     <h4>Total:</h4>
-                    <h5>00.00</h5>
+                    <h5>${this.state.priceTotal}</h5>
                   </div>
                 </div>
               ) : null}
