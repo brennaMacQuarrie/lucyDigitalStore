@@ -139,16 +139,18 @@ class App extends Component {
   }
     
   priceTotal = () => {
-      // gives me one number at a time in an array
       let sumTotal = this.state.cart.map((item) => {
         return item.price;
       })
       const reducer = (accumulator, currentValue) => accumulator + currentValue;
       
-      sumTotal.length > 0 ? console.log(sumTotal.reduce(reducer)) : console.log('zero');
+      let newTotal = 0;
 
+      if (sumTotal.length > 0) {
+        newTotal = sumTotal.reduce(reducer);
+      } 
       this.setState({
-        priceTotal: sumTotal,
+        priceTotal: newTotal,
       })      
   }
 
@@ -225,7 +227,7 @@ class App extends Component {
           <div className="mainDisplay">
             {this.state.items.map((item) => {
               return (
-                <div className="item">
+                <div className="item" key={item.id}>
                   <Item
                     key={item.key}
                     image={this.displayImages(item.id)}
