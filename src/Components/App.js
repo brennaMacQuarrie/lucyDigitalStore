@@ -8,32 +8,44 @@ import Cart from './Cart';
 import '../App.css';
 import { getQueriesForElement } from '@testing-library/react';
 
+
+// class component for app.js
 class App extends Component {
+  // constructor to set initial state
   constructor() {
     super();
     this.state = {
+      // to hold info passed into our cart
       cart: [],
+      // to hold price in cart
       priceTotal: 0,
+      // to hold boolean if cart is open or closed
       show: false,
+      // to access items from firebase json file and show on page
       items: [],
     };
   }
 
+  // didMount, where we make data requests for use 
   componentDidMount() {
     // Items population
+    // open firebase portal! store the stuff in it here
     const dbRef = firebase.database().ref();
+    // snapshot of the dbref gives us what's in here
     dbRef.on("value", (response) => {
-
+      // new array so we don't modify state
       const newState = [];
+      // this is the response we get from db
       const data = response.val();
-      // gets into items array in my db
+      // gets into that response and reaches the 'items' obj i have built with json
       const items = data.items;
 
+      // for each item in that object, drop it into the above array instead.
       items.forEach((item) => {
         newState.push(item); 
       });
-
-      this.setState({
+      // now make my items from state, the same as that new array
+      this.setState({ 
         items: newState,
       });
     });
@@ -44,8 +56,9 @@ class App extends Component {
 
       const newCart = [];
       const data = response.val();
-
+      // for each key in the new Cart data object, 
       for (let key in data) {
+        // push an object that looks like this into the newCart array
         newCart.push({
           key: key,
           id: data[key].id,
@@ -57,7 +70,9 @@ class App extends Component {
       }
       
       this.setState({
+        // this is an array of those exact objects using info from the original Cart obj
         cart: newCart,
+        // once the cart has been altered, run the priceTotal func
       }, this.priceTotal);
     });
   }
@@ -71,6 +86,7 @@ class App extends Component {
 
   //IMAGE DISPLAY
   displayImages = (imageID) => {
+    // imageID - 1 is because my images all have an id but they're 1-indexed
     return images[imageID - 1].url;
   }
 
@@ -83,6 +99,7 @@ class App extends Component {
       const data = response.val();
       const items = data.items;
       items.forEach((item) => {
+        // filtering for 'jewelry' items
         if (item.type == "jewelry") {
           jewelryArray.push(item); 
         }
@@ -139,16 +156,20 @@ class App extends Component {
   }
     
   priceTotal = () => {
+      // this variable is to hold a new array that is full of the price of each item in the cart array, once the cart array has been set
       let sumTotal = this.state.cart.map((item) => {
         return item.price;
       })
+      // math! this is a function that returns the sum of two nums
       const reducer = (accumulator, currentValue) => accumulator + currentValue;
-      
+      // placeholder value
       let newTotal = 0;
-
+      // if there's stuff in that array from sumTotal
       if (sumTotal.length > 0) {
+        // make the placeholder now equal the sum of those numbers
         newTotal = sumTotal.reduce(reducer);
       } 
+      // now set that number to my state
       this.setState({
         priceTotal: newTotal,
       })      
@@ -156,12 +177,14 @@ class App extends Component {
 
   removeFromCart = (itemTobeRemoved) => {
     const dbRef = firebase.database().ref('Cart');
+    // the friggin remove function, heccin yes
     dbRef.child(itemTobeRemoved).remove();
   }
 
 
   render() {
     const copyright = '\u00A9'; 
+    // this is where we determine what is displayed to the DOM
     return (
       <div className="App">
         <nav>
@@ -186,6 +209,7 @@ class App extends Component {
                   {this.state.cart.map((cartItem) => {
                     return (
                       <Cart
+                      // cart props so it knows what it's using from above functions
                         key={cartItem.key}
                         image={this.displayImages(cartItem.id)}
                         title={cartItem.name}
