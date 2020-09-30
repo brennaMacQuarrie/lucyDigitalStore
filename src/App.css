@@ -227,10 +227,10 @@ main {
   width: 220px;
 
   margin: 10px;
-  background: #c7f5f5;
+  background: #e5f8f8;
   border-radius: 10px;
-  box-shadow:  8px 8px 5px #81b9b9, 
-              -8px -8px 10px #defdfd;
+  box-shadow:  8px 8px 4px #81b9b9, 
+              -8px -8px 8px #e6f8f8;
 }
 h3 {
   font-size: calc(1.8rem + 1vw);
@@ -239,7 +239,7 @@ h3 {
   font-family: Larch, serif;
   height: 45px;
   width: 90%;
-  text-shadow: 0.5px 0.5px 0.7px rgb(97, 97, 97);
+  text-shadow: 0.5px 0.5px 0.5px rgb(136, 136, 136);
 }
 /* this is the image */
 .individualItem div {
