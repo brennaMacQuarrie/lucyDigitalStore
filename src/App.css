@@ -314,7 +314,7 @@ h3 {
   background: #e7e7e7;
   box-shadow:  9px 9px 20px #b5b5b5, 
              -9px -9px 20px #f5f5f5;
-  align-items: start;
+  align-items: center;
 }
 .fakeItem img {
   width: 115px;
@@ -343,9 +343,7 @@ h3 {
 .cart h4 {
   font-family: Larch, serif;
   font-size: clamp(2rem, 3vw, 3rem);
-  text-shadow: 0.5px 0.5px 0.7px rgb(49, 49, 49);
 }
-
 .cart h5 {
   font-size: clamp(1.5rem, 3vw, 1.9rem);
 }
