@@ -69,7 +69,7 @@ p {
 }
 
 .header {
-  height: 100vh;
+  height: 85vh;
   margin-top: 0;
   display: flex;
   flex-direction: column;
@@ -82,6 +82,7 @@ p {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: fixed;
   z-index: 99;
 }
@@ -144,7 +145,7 @@ i.fa {
 .logoBox {
   width: 200px;
   height: 200px;
-  background: #7cf8f8;
+  background: #8df1f1;
   border: 1px black solid;
   display: flex;
   align-items: flex-end;
@@ -163,7 +164,7 @@ h2 {
 }
 
 footer a {
-  color: #cbdb64;
+  color: #8df1f1;
 }
 
 .viewOptions {
@@ -180,7 +181,7 @@ footer a {
   border: none;
   border: 1px transparent solid;
   border-radius: 5px;
-  background: #85bd3b;
+  background: #8df1f1;
   font-family: 'Sketch';
 }
 
@@ -223,11 +224,11 @@ main {
   width: 220px;
 
   margin: 10px;
-  background: #fcfffa;
+  background: #8df1f1;
   border-radius: 10px;
-  border: #85bd3b solid 2px;
-  box-shadow:  20px 20px 60px #d6d9d0, 
-              -20px -20px 60px #ffffff;
+  border: #8df1f1 solid 2px;
+  box-shadow:  8px 8px 5px #81b9b9, 
+              -8px -8px 10px #defdfd;
 }
 h3 {
   font-size: calc(1.8rem + 1vw);
@@ -236,7 +237,7 @@ h3 {
   font-family: Larch, serif;
   height: 45px;
   width: 90%;
-  text-shadow: 0.5px 0.5px 0.7px rgb(49, 49, 49);
+  text-shadow: 0.5px 0.5px 0.7px rgb(97, 97, 97);
 }
 /* this is the image */
 .individualItem div {
@@ -276,7 +277,8 @@ h3 {
 /* --------------------------------------------CART DISPLAY */
 
 .cart h2 {
-  margin: auto 5%;
+  margin: 5%;
+  line-height: 90%;
 }
 
 .cart {
