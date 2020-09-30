@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/projectFive/static/css/main.534c000e.chunk.css",
+    "main.css": "/projectFive/static/css/main.d44a11a4.chunk.css",
     "main.js": "/projectFive/static/js/main.c82bc3b5.chunk.js",
     "main.js.map": "/projectFive/static/js/main.c82bc3b5.chunk.js.map",
     "runtime-main.js": "/projectFive/static/js/runtime-main.46fe3550.js",
@@ -9,10 +9,10 @@
     "static/js/2.8ebb8ba9.chunk.js": "/projectFive/static/js/2.8ebb8ba9.chunk.js",
     "static/js/2.8ebb8ba9.chunk.js.map": "/projectFive/static/js/2.8ebb8ba9.chunk.js.map",
     "index.html": "/projectFive/index.html",
-    "precache-manifest.4096ceac3c06c4f92964c555af1b0d8c.js": "/projectFive/precache-manifest.4096ceac3c06c4f92964c555af1b0d8c.js",
+    "precache-manifest.87602a2e6bdd04c1b1e54376896e8f59.js": "/projectFive/precache-manifest.87602a2e6bdd04c1b1e54376896e8f59.js",
     "service-worker.js": "/projectFive/service-worker.js",
     "static/css/2.769e7e01.chunk.css.map": "/projectFive/static/css/2.769e7e01.chunk.css.map",
-    "static/css/main.534c000e.chunk.css.map": "/projectFive/static/css/main.534c000e.chunk.css.map",
+    "static/css/main.d44a11a4.chunk.css.map": "/projectFive/static/css/main.d44a11a4.chunk.css.map",
     "static/js/2.8ebb8ba9.chunk.js.LICENSE.txt": "/projectFive/static/js/2.8ebb8ba9.chunk.js.LICENSE.txt",
     "static/media/App.css": "/projectFive/static/media/ZapfinoLinotypeOne.2b07531c.ttf",
     "static/media/braceletMagnesite.jpg": "/projectFive/static/media/braceletMagnesite.50b27add.jpg",
@@ -37,7 +37,7 @@
     "static/js/runtime-main.46fe3550.js",
     "static/css/2.769e7e01.chunk.css",
     "static/js/2.8ebb8ba9.chunk.js",
-    "static/css/main.534c000e.chunk.css",
+    "static/css/main.d44a11a4.chunk.css",
     "static/js/main.c82bc3b5.chunk.js"
   ]
 }
