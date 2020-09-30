@@ -110,7 +110,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0%;
+  margin: 20px 50%;
   transition: 0.5s all;
 }
 .blogLink {
