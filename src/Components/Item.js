@@ -10,10 +10,12 @@ const Item = (props) => {
         </div>
         
         <h3>{props.title}</h3>
-        <p>Price: {props.price}</p>
+        <p>Price: ${props.price}.00</p>
         <button onClick={props.addToCart}>add to cart</button>
       </div>
     );
 }
 
 export default Item;
+
+

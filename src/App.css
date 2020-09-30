@@ -301,6 +301,7 @@ h3 {
 .cartDiv {
   height: 100%;
 }
+
 .fakeItem { 
   display: flex;
   justify-content: space-between;
@@ -313,6 +314,7 @@ h3 {
   background: #e7e7e7;
   box-shadow:  9px 9px 20px #b5b5b5, 
              -9px -9px 20px #f5f5f5;
+  align-items: start;
 }
 .fakeItem img {
   width: 115px;
@@ -357,6 +359,7 @@ footer {
   background: black;
   color: white;
   font-family: 'Sketch';
+  font-size: clamp(1.2rem, 2vw, 1rem);
   padding: 10px;
   z-index: 999;
 }
@@ -368,6 +371,13 @@ footer {
     width: 50%;
   }
 }
+
+@media (max-width: 550px) {
+  .cart {
+    width: 60%;
+  }
+}
+
 
 /* Landscape phones and down */
 @media (max-width: 400px) {
