@@ -326,11 +326,14 @@ h3 {
   width: 50%;
 }
 .fakeItem p {
+  font-size: clamp(1.5rem, 3vw, 1rem);
   width: 90%;
 }
+
 .priceTotal {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 90%;
   margin: 10px auto;
   border-top: 6px black double;
@@ -339,11 +342,9 @@ h3 {
   font-family: Larch, serif;
   font-size: clamp(2rem, 3vw, 3rem);
   text-shadow: 0.5px 0.5px 0.7px rgb(49, 49, 49);
-
 }
 
 .cart h5 {
-  margin-top: 10px;
   font-size: clamp(1.5rem, 3vw, 1.9rem);
 }
 
@@ -379,8 +380,10 @@ footer {
   .blogContainer {
     display: none;
   }
+
   .cart {
-    width: 60%;
+    width: 100%;
+    border: 6px #020202 double;
   }
   .cartShowIcon {
     margin: 20px;
