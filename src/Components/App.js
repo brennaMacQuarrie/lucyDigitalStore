@@ -182,7 +182,7 @@ class App extends Component {
             <ToggleDisplay className="cart" show={this.state.show}>
               <h2>Your Cart</h2>
               {this.state.cart.length > 0 ? (
-                <div className="cartContainer">
+                <div>
                   {this.state.cart.map((cartItem) => {
                     return (
                       <Cart
