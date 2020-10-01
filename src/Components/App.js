@@ -6,7 +6,7 @@ import Item from './Item';
 import ToggleDisplay from "react-toggle-display";
 import Cart from './Cart';
 import '../App.css';
-import { getQueriesForElement } from '@testing-library/react';
+// import { getQueriesForElement } from '@testing-library/react';
 
 
 // class component for app.js
