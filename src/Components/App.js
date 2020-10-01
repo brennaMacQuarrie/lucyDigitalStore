@@ -198,7 +198,7 @@ class App extends Component {
 
           <div className="cartDiv">
 
-            <button onClick={() => this.handleCart()} className="cartShowIcon">
+            <button aria-label="open or close your cart" onClick={() => this.handleCart()} className="cartShowIcon">
               <i className="fa fa-shopping-cart"></i>
             </button>
 

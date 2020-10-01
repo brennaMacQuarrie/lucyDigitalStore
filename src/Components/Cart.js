@@ -11,7 +11,7 @@ const Cart = (props) => {
                 <p>Price: ${props.price}</p>
             </div>
 
-            <button onClick={props.cartRemove}>
+            <button aria-label="remove this item to your cart" onClick={props.cartRemove}>
                 <i className="fa fa-trash" aria-hidden="true"></i>
             </button>
         </div>
