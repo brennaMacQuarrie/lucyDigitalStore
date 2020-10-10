@@ -229,8 +229,8 @@ class App extends Component {
                 </div>
               ) : null}
             <div className="priceTotal">
-              <h4>Total:</h4>
-              <h5>${this.state.priceTotal}</h5>
+              <h3>Total:</h3>
+              <h3>${this.state.priceTotal}</h3>
             </div>
             </ToggleDisplay>
           </div>

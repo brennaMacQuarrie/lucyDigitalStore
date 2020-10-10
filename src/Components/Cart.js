@@ -7,7 +7,7 @@ const Cart = (props) => {
             <img src={props.image} alt={props.title} />
             
             <div>
-                <h4>{props.title}</h4>
+                <h3>{props.title}</h3>
                 <p>Price: ${props.price}</p>
             </div>
 

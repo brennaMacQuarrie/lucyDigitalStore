@@ -279,6 +279,7 @@ h2 {
 .cart h2 {
   margin: 5%;
   line-height: 90%;
+  font-size: calc(3rem + 2vw);
 }
 
 .cart {
@@ -300,6 +301,7 @@ h2 {
   height: 100%;
 }
 
+
 .fakeItem { 
   display: flex;
   justify-content: space-between;
@@ -309,8 +311,6 @@ h2 {
   padding-right: 5%;
   border-radius: 2px;
   background: transparent;
-  box-shadow:  9px 9px 20px #b5b5b5, 
-             -9px -9px 20px #f5f5f5;
   align-items: center;
 }
 .fakeItem img {
@@ -326,10 +326,9 @@ h2 {
   width: 50%;
 }
 .fakeItem p {
-  font-size: clamp(1.5rem, 3vw, 1rem);
+  font-size: calc(1rem + 0.5vw);
   width: 90%;
 }
-
 .priceTotal {
   display: flex;
   justify-content: space-between;
@@ -338,12 +337,12 @@ h2 {
   margin: 10px auto;
   border-top: 1px black solid;
 }
-.cart h4 {
+.cart h3 {
   font-family: Larch, serif;
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: calc(3rem + 2vw);
 }
-.cart h5 {
-  font-size: clamp(1.5rem, 3vw, 1.9rem);
+.priceTotal h3 {
+  font-size: calc(3rem + 2vw);
 }
 
 .fakeItem button {
@@ -351,11 +350,12 @@ h2 {
   background: transparent;
 }
 
+
 footer {
   background: black;
   color: white;
   font-family: 'Sketch';
-  font-size: clamp(1.2rem, 2vw, 1rem);
+  font-size: calc(1rem + 0.5vw);
   padding: 10px;
   z-index: 999;
 }
