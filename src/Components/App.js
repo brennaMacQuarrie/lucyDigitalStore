@@ -169,7 +169,7 @@ class App extends Component {
         // make the placeholder now equal the sum of those numbers
         newTotal = sumTotal.reduce(reducer);
       } 
-      // now set that number to my state
+      // now set that number to my state 
       this.setState({
         priceTotal: newTotal,
       })      
@@ -203,7 +203,12 @@ class App extends Component {
             </button>
 
             <ToggleDisplay className="cart" show={this.state.show}>
+              <button aria-label="open or close your cart" onClick={() => this.handleCart()} className="cartShowIcon">
+                <i className="fa fa-shopping-cart"></i>
+              </button>
               <h2>Your Cart</h2>
+              
+
               {this.state.cart.length > 0 ? (
                 <div>
                   {this.state.cart.map((cartItem) => {
@@ -234,7 +239,6 @@ class App extends Component {
         <Header />
 
         <main className="wrapper">
-          <h2>View By</h2>
           <ul className="viewOptions">
             <li>
               <button onClick={this.handlePaintings}>Paintings</button>

@@ -18,7 +18,7 @@ body {
   font-size: 1.6rem;
   font-family: 'Lato', sans-serif;
   
-  background: #f6ffff;
+  background: #f9ffff;
 }
 
 @font-face {
@@ -28,12 +28,12 @@ body {
 
 @font-face {
   font-family: 'Sketch';
-  src: local('Sketch'), url(./fonts/SketchRockwell-Bold.ttf) format('truetype');
+  src: local('Sketch'), url(./fonts/GeosansLight.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Larch';
-  src: local('Larch'), url(./fonts/BrightLarch_PERSONAL_USE.ttf) format('truetype');
+  src: local('Larch'), url(./fonts/Crimson\ Foam\ Font.200626-1831.ttf) format('truetype');
 }
 
 
@@ -89,6 +89,9 @@ p {
 
 .cartShowIcon {
   background: transparent;
+  position: absolute;
+  top: 20px;
+  right: 0;
   border: none;
   margin: 20px 40px;
   cursor: pointer;
@@ -96,12 +99,12 @@ p {
 }
 .cartShowIcon:hover,
 .cartShowIcon:focus {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .gradient {
   font-family: Larch, serif;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   background: black;
   border: 0.8px black solid;
   border-radius: 50%;
@@ -114,7 +117,7 @@ p {
   transition: 0.5s all;
 }
 .blogLink {
-  background: #f6ffff;
+  background: #f9ffff;
   height: 60px;
   width: 60px;
   border: 0.8px black solid;
@@ -131,14 +134,13 @@ p {
 .gradient:hover,
 .gradient:active {
   background: linear-gradient(-45deg, #85bd3b 10%, #8df1f1 100%);
-  transform: scale(1.2);
+  transform: scale(1.1);
 
 }
 
-
+/* SHOPPING CART FAVICON */
 i.fa {
   position: relative;
-  z-index: 100;
   font-size: calc(2rem + 1vw);
 }
 
@@ -158,11 +160,6 @@ h1 {
   font-size: 25rem;
   line-height: 40%;
 }
-h2 {
-  font-family: Larch, serif;
-  width: 200px;
-  font-size: clamp(4rem, 5vw, 5rem);
-}
 
 footer a {
   color: #8df1f1;
@@ -178,14 +175,13 @@ footer a {
   margin: 10px;
 }
 .viewOptions li button {
-  padding: 3px 20px;
+  padding: 0 20px;
   border: none;
   border: 1px #95b9b9 solid;
   border-radius: 5px;
   background: #c7f5f5;
   font-family: Larch, serif;
-  font-size: clamp(2rem, 3vw, 3rem);
-
+  font-size: calc(2.2rem + 1.5vw);
 }
 
 .viewOptions li button:hover,
@@ -225,21 +221,24 @@ main {
 .item {
   height: 100%;
   width: 220px;
-
   margin: 10px;
-  background: #f6fdfd;
+  background: #f9ffff;
   border-radius: 5px;
   box-shadow:  8px 8px 4px #95b9b9, 
               -8px -8px 8px #e0e9e9;
 }
-h3 {
-  font-size: calc(1.8rem + 1vw);
-  line-height: 90%;
+.hTwo {
+  background-color: #f9ffff;
+  display: flex;
+  justify-content: center;
+}
+h2 {
+  height: 50px;
+  font-size: calc(3rem + 1vw);
+  line-height: 60%;
   margin: 10px 0;
   font-family: Larch, serif;
-  height: 45px;
   width: 90%;
-  text-shadow: 0.5px 0.5px 0.5px rgb(136, 136, 136);
 }
 /* this is the image */
 .individualItem div {
@@ -247,8 +246,8 @@ h3 {
   height: 90%;
   background: white;
   border-radius: 5px;
-  box-shadow: 3px 3px 3px grey;
 }
+
 .individualItem div img {
   border-radius: 5px;
 }
@@ -284,7 +283,6 @@ h3 {
 
 .cart {
   position: absolute;
-  z-index: 90;
   right: 0px;
   top: 0;
   height: 100vh;
@@ -293,7 +291,7 @@ h3 {
   background: rgb(252, 255, 250);
   text-align: left;
   transition: 0.9s all;
-  border-left: 8px #020202 double;
+  border: 1px #020202 solid;
   font-family: Sketch, serif;
   overflow-y: auto;
 }
@@ -309,15 +307,15 @@ h3 {
   height: 15%;
   margin: 10px auto;
   padding-right: 5%;
-  border: 2px black solid;
-  border-radius: 9px;
-  background: #e7e7e7;
+  border-radius: 2px;
+  background: transparent;
   box-shadow:  9px 9px 20px #b5b5b5, 
              -9px -9px 20px #f5f5f5;
   align-items: center;
 }
 .fakeItem img {
   width: 115px;
+  border: 0.6px solid black;
 }
 
 .fakeItem div {
@@ -338,7 +336,7 @@ h3 {
   align-items: center;
   width: 90%;
   margin: 10px auto;
-  border-top: 6px black double;
+  border-top: 1px black solid;
 }
 .cart h4 {
   font-family: Larch, serif;
