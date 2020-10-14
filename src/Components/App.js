@@ -274,7 +274,7 @@ class App extends Component {
         <footer>
           <p>
             <img src="" alt="" />
-            {copyright} Juno College by{" "}
+            {copyright} Juno College 2020 par{" "}
             <a href="https://brennamacquarrie.dev">Brenna MacQuarrie</a>
           </p>
         </footer>
