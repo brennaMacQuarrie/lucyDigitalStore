@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/lucyDigitalStore/static/css/main.e2c948a3.chunk.css",
-    "main.js": "/lucyDigitalStore/static/js/main.fb604668.chunk.js",
-    "main.js.map": "/lucyDigitalStore/static/js/main.fb604668.chunk.js.map",
+    "main.js": "/lucyDigitalStore/static/js/main.524817bc.chunk.js",
+    "main.js.map": "/lucyDigitalStore/static/js/main.524817bc.chunk.js.map",
     "runtime-main.js": "/lucyDigitalStore/static/js/runtime-main.ab87748e.js",
     "runtime-main.js.map": "/lucyDigitalStore/static/js/runtime-main.ab87748e.js.map",
     "static/css/2.0aac9f23.chunk.css": "/lucyDigitalStore/static/css/2.0aac9f23.chunk.css",
     "static/js/2.e177db8b.chunk.js": "/lucyDigitalStore/static/js/2.e177db8b.chunk.js",
     "static/js/2.e177db8b.chunk.js.map": "/lucyDigitalStore/static/js/2.e177db8b.chunk.js.map",
     "index.html": "/lucyDigitalStore/index.html",
-    "precache-manifest.efabfaf4c2706e85b5684f4768a1069a.js": "/lucyDigitalStore/precache-manifest.efabfaf4c2706e85b5684f4768a1069a.js",
+    "precache-manifest.f5a0a7d793aef33cd2d4eb250ef5f0ce.js": "/lucyDigitalStore/precache-manifest.f5a0a7d793aef33cd2d4eb250ef5f0ce.js",
     "service-worker.js": "/lucyDigitalStore/service-worker.js",
     "static/css/2.0aac9f23.chunk.css.map": "/lucyDigitalStore/static/css/2.0aac9f23.chunk.css.map",
     "static/css/main.e2c948a3.chunk.css.map": "/lucyDigitalStore/static/css/main.e2c948a3.chunk.css.map",
@@ -38,6 +38,6 @@
     "static/css/2.0aac9f23.chunk.css",
     "static/js/2.e177db8b.chunk.js",
     "static/css/main.e2c948a3.chunk.css",
-    "static/js/main.fb604668.chunk.js"
+    "static/js/main.524817bc.chunk.js"
   ]
 }

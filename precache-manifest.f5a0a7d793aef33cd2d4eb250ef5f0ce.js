@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8645b95debe8475981fce3284397184c",
+    "revision": "e50c2205494de644ba7a37df20743289",
     "url": "/lucyDigitalStore/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lucyDigitalStore/static/css/2.0aac9f23.chunk.css"
   },
   {
-    "revision": "a2cbee536e85094248b3",
+    "revision": "7d3f66ce1ab9b95b7c22",
     "url": "/lucyDigitalStore/static/css/main.e2c948a3.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lucyDigitalStore/static/js/2.e177db8b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a2cbee536e85094248b3",
-    "url": "/lucyDigitalStore/static/js/main.fb604668.chunk.js"
+    "revision": "7d3f66ce1ab9b95b7c22",
+    "url": "/lucyDigitalStore/static/js/main.524817bc.chunk.js"
   },
   {
     "revision": "02b0f0f774530a9339c0",

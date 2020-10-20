@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/lucyDigitalStore/precache-manifest.efabfaf4c2706e85b5684f4768a1069a.js"
+  "/lucyDigitalStore/precache-manifest.f5a0a7d793aef33cd2d4eb250ef5f0ce.js"
 );
 
 self.addEventListener('message', (event) => {
