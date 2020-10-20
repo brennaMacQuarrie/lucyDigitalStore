@@ -147,7 +147,6 @@ class App extends Component {
     });
   }
 
-
   // two button click handlers that dymanically alter Cart in db
   addToCart = (itemToAdd) => {
     const dbRef = firebase.database().ref('Cart');
@@ -184,7 +183,7 @@ class App extends Component {
 
   render() {
     const copyright = '\u00A9'; 
-    // this is where we determine what is displayed to the DOM
+
     return (
       <div className="App">
         <nav>

@@ -3,7 +3,7 @@ import React from 'react';
 
 const Cart = (props) => {
     return (
-        <div className="fakeItem">
+        <div className="fakeItem" tabIndex={0}>
             <img src={props.image} alt={props.title} />
             
             <div>
